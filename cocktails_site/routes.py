@@ -78,7 +78,7 @@ def add_cocktail():
     if form.validate_on_submit():
         file = form.image.data
         secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], form.name.data + file.filename[-4:]))
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], form.name.data.replace(' ', '') + file.filename[-4:]))
 
         cocktail = Cocktail(name=form.name.data, description=form.description.data, user_id=current_user.id)
         db.session.add(cocktail)
