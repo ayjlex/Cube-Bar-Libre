@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='styles/library.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Library
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <h2>Library</h2>
+        <h3>Explore our cocktails recipes, get inspired and add your own to the base...</h3>
+        <div class="cocktails">
+            {% for cocktail in cocktails %}
+            <div class="cocktail">
+                <img class="cocktail-image"
+                     src="{{ url_for('static', filename='images/' + cocktail.name.replace(' ', '_') + '.jpg') }}">
+                <div class="cocktail-name">
+                    <a class="cocktail-page" href="{{ url_for('cocktail', cocktail=cocktail.name) }}">{{
+                        cocktail.name}}</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% if current_user.is_authenticated %}
+            {% for cocktail in user_cocktails %}
+            <div class="cocktail">
+                <img class="cocktail-image"
+                     src="{{ url_for('static', filename='images/' + cocktail.name + '.jpg') }}">
+                <div class="cocktail-name">
+                    <a class="cocktail-page" href="{{ url_for('cocktail', cocktail=cocktail.name) }}">{{
+                        cocktail.name}}</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="cocktail">
+                <img class="cocktail-image"
+                     src="{{ url_for('static', filename='images/add_cocktail.jpg') }}">
+                <div class="cocktail-name">
+                    <a class="cocktail-page" href="{{ url_for('add_cocktail') }}">Add Cocktail</a>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

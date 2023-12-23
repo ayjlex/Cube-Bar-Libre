@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.4)),
+    url(../images/page-background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+nav {
+  height: 150px;
+  padding: 0 200px;
+  margin-bottom: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 84px;
+  font-weight: 400;
+  color: #ccf381;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-icon {
+  stroke: #ccf381;
+  height: 100px;
+  stroke-width: 1px;
+}
+
+.library-link:link,
+.library-link:visited {
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  font-weight: 400;
+  color: #ccf381;
+  text-decoration: none;
+}
+
+.library-link:hover {
+  color: #42e95e;
+}
+
+.forms-container {
+  display: flex;
+  gap: 40px;
+}
+
+.forms-container a:link,
+.forms-container a:visited {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  color: #ccf381;
+  text-decoration: none;
+}
+
+.forms-container a:hover,
+.forms-container a:active {
+  color: #42e95e;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto 30px auto;
+}
+
+h2 {
+  font-size: 96px;
+  text-align: center;
+  color: #dad2bc;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 60px;
+  text-align: center;
+  color: #dad2bc;
+  margin-bottom: 20px;
+}
+
+.cocktails {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  justify-content: center;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+.cocktail {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 250px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+}
+
+.cocktail-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.cocktail-name {
+  text-align: center;
+  padding: 16px;
+  overflow-wrap: break-word;
+}
+
+.cocktail-icon {
+  height: 40px;
+}
+
+.cocktail-page:link,
+.cocktail-page:visited {
+  color: #dad2bc;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.cocktail-page:hover,
+.cocktail-page:active {
+  cursor: pointer;
+}
+
+footer {
+  background-color: #fffcf9;
+  color: #575757;
+}

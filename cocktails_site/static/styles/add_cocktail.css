@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.4)),
+    url(../images/page-background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  height: 150px;
+  padding: 0 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* position: fixed;
+  z-index: 1; */
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 84px;
+  font-weight: 400;
+  color: #ccf381;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-icon {
+  stroke: #ccf381;
+  height: 100px;
+  stroke-width: 1px;
+}
+
+.library-link:link,
+.library-link:visited {
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  font-weight: 400;
+  color: #ccf381;
+  text-decoration: none;
+}
+
+.library-link:hover {
+  color: #42e95e;
+}
+
+.forms-container {
+  display: flex;
+  gap: 40px;
+}
+
+.forms-container a:link,
+.forms-container a:visited {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  color: #ccf381;
+  text-decoration: none;
+}
+
+.forms-container a:hover,
+.forms-container a:active {
+  color: #42e95e;
+}

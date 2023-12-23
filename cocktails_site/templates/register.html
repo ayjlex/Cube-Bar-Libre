@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='styles/forms.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    {{ form.username.label }}
+    {{ form.username(placeholder='Username') }}
+
+    {{ form.password.label }}
+    {{ form.password(placeholder='Password') }}
+
+    {{ form.confirm_password.label }}
+    {{ form.confirm_password(placeholder='Confirm Password') }}
+
+    <br>
+
+    {{ form.submit(class="submit") }}
+</form>
+{% endblock %}

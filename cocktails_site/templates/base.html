@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@400;500;700&family=Whisper&display=swap"
+          rel="stylesheet">
+    {% block style %}
+    {% endblock %}
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+<nav>
+    <a class="logo" href="{{ url_for('home') }}">
+        Cube Bar Libre
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="logo-icon">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+        </svg>
+    </a>
+    <a class="library-link" href="{{ url_for('library') }}">Library</a>
+    {% if current_user.is_authenticated %}
+    <div class="forms-container">
+        <a href="#">Hi, {{current_user.username }}!</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    {% else %}
+    <div class="forms-container">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+    {% endif %}
+</nav>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="messages">
+    {% for category, message in messages %}
+    <div class="message">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+</body>
+
+</html>

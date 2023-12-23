@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='styles/forms.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Add Cocktail
+{% endblock %}
+
+{% block content %}
+<form method=post enctype=multipart/form-data>
+    {{ form.hidden_tag() }}
+
+    {{ form.name.label }}
+    {{ form.name() }}
+
+    {{ form.description.label }}
+    {{ form.description(class="description-field") }}
+
+    {{ form.image.label }}
+    {{ form.image() }}
+
+    <br>
+
+    {{ form.submit(class="submit") }}
+</form>
+{% endblock %}

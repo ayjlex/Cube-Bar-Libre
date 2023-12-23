@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<header>
+  <h1>
+    Your favourite cocktails recipes collected
+    <div>in one place</div>
+  </h1>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="arrow-icon">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+  </svg>
+  <div class="anchor-container">
+    <a class="library-anchor" href="{{ url_for('library') }}">Explore</a>
+  </div>
+</header>
+{% endblock %}
