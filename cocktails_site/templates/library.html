@@ -28,7 +28,7 @@ Library
             {% for cocktail in user_cocktails %}
             <div class="cocktail">
                 <img class="cocktail-image"
-                     src="{{ url_for('static', filename='images/' + cocktail.name + '.jpg') }}">
+                     src="{{ url_for('static', filename='images/' + cocktai.name.replace(' ', '_') + '.jpg') }}">
                 <div class="cocktail-name">
                     <a class="cocktail-page" href="{{ url_for('cocktail', cocktail=cocktail.name) }}">{{
                         cocktail.name}}</a>
